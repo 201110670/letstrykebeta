@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" />
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.mobile-1.4.0.min.js"></script>
+<style>
+#element1{
+  width: 200px;
+ height: 200px;
+ background: green;
+ border-radius: 50%;
+ display: inline-block;
+ margin-right: 20px;
+
+}
+
+.myButton {
+	background-color:#37b02e;
+	-moz-border-radius:120px;
+	-webkit-border-radius:120px;
+	border-radius:120px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:17px;
+	padding:13px 28px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.myButton:hover {
+	background-color:#5cbf2a;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+</style>
+</head>
+<body>
+
+
+<div data-role="page" id="create">
+	<div data-role="header" data-position="relative">
+	<a href="#home" data-role="button" style="background-color:lightgreen;">Home</a>
+		<h1>LETS TRYKE <br />BANNER HERE</h1><br />
+	</div>
+<div data-role="content" data-theme="a">
+<input type="text" id="a" required/>
+<input type="button" id="add" value="add"/>
+<center>
+<h2>Created Location Templates</h2>
+</center>
+<div id="here"></div>
+</div>
+</div>
+</body>
+<script>
+function addlocal(){
+
+
+}
+
+$("#add").on("click",function(){
+
+
+var x = document.getElementById("demo");
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+	
+function showPosition(position){
+	var z=position.coords.latitude;
+	var z1=position.coords.longitude;
+	window.localStorage.setItem("aa",z1);
+	window.localStorage.setItem("ba",z);
+}
+
+
+});
+setTimeout(function(){
+
+	var aa1=window.localStorage.getItem(aa);
+	var ba1=window.localStorage.getItem(ba);
+document.getElementById("a").value=aa1+","+ba1;
+},1000);
+
+
+$("#submit").click(function(){
+alert("Please wait. We will text you the Body number of the Tricycle. \n Please give us feedback if the transaction was successful.");
+});
+
+
+$("#save").click(function(){
+var add=$("#address").val();
+var num=$("#number").val();
+var name=$("#name").val();
+window.localStorage.setItem("address",add);
+window.localStorage.setItem("number",num);
+window.localStorage.setItem("name",name);
+alert("Congrats! You've successfully set your info.");
+location.href="#home";
+});
+
+
+
+
+
+	
+</script>
+</html>

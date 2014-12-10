@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" />
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.mobile-1.4.0.min.js"></script>
+<style>
+#element1{
+  width: 200px;
+ height: 200px;
+ background: green;
+ border-radius: 50%;
+ display: inline-block;
+ margin-right: 20px;
+
+}
+
+.myButton {
+	background-color:#37b02e;
+	-moz-border-radius:120px;
+	-webkit-border-radius:120px;
+	border-radius:120px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:17px;
+	padding:13px 28px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.myButton:hover {
+	background-color:#5cbf2a;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+</style>
+</head>
+<body>
+
+<div data-role="page" id="home">
+	<div data-role="header" data-position="relative">
+		<center><img src="banner.png" width="60%"/></center>
+	</div>
+<div data-role="content" data-theme="a" align="center">
+<center><a href=""><div data-theme="b"><img src="images/icon.png" width="70%"/><img src="images/keepcalm.png" width="60%"/></div></a></center>
+<a data-role="button" class="save"><label class="text">Home</label></a>
+<a data-role="button" class="save"><label class="text">School</label></a>
+<a href="#create" data-role="button" data-theme="f">Add new template</a>
+</div>
+
+</div>
+
+<div data-role="page" id="settings">
+	<div data-role="header" data-position="relative">
+		<center><img src="images/banner.png"  width="50%"/></center>
+		<a href="index.html" class="ui-btn ui-icon-home ui-btn-icon-left" style="background-color:lightgreen;">Home</a>
+	</div>
+<div data-role="content" data-theme="a">
+<h1>Set your information here.</h1>
+<label>*Full Name</label>
+<input type="text" id="name" required/>
+<label>*Address</label>
+<input type="text" id="address" required/>
+<label>*Contact Number</label>
+<input type="text" id="number" required/>
+<a data-role="button" id="save">Submit</a>
+</div>
+
+</div>
+
+<div data-role="page" id="ineedaride">
+	<div data-role="header" data-position="relative">
+	<center><img src="images/banner.png"  width="50%"/></center>
+	<a href="#home" data-role="button" style="background-color:lightgreen;">Home</a>
+	</div>
+<div data-role="content" data-theme="a">
+<h1>I need a ride now!</h1>
+<label>Full Name</label>
+<input type="text" id="name1" required/>
+<label>Address</label>
+<input type="text" id="address1" required/>
+<label>Contact Number</label>
+<input type="text" id="number1" required/>
+<label>Gender<small>(Optional)</small></label>
+<select>
+<option>
+Choose one
+</option>
+<option>
+Male
+</option>
+<option>
+Female
+</option>
+</select>
+<label>Anything else to identify you? <small>(Optional)</small></label>
+<textarea placeholder="ex. Man in front of brown gate."></textarea>
+<a data-role="button" id="submit">Submit</a>
+</div>
+</div>
+
+<div data-role="page" id="create">
+	<div data-role="header" data-position="relative">
+	<center><img src="images/banner.png"  width="50%"/></center>
+	<a href="#home" data-role="button" style="background-color:lightgreen;">Home</a>
+	</div>
+<div data-role="content" data-theme="a">
+<label>Full Name</label>
+<input type="text" id="name1" required/>
+<label>Category(ex. Home,School,others)</label>
+<input type="text" id="name1" required/>
+<label>Address</label>
+<input type="text" id="address1" required/>
+<label>Contact Number</label>
+<input type="text" id="number1" required/>
+<label>Gender<small>(Optional)</small></label>
+<select>
+<option>
+Choose one
+</option>
+<option>
+Male
+</option>
+<option>
+Female
+</option>
+</select>
+<label>Anything else to identify you? <small>(Optional)</small></label>
+<textarea placeholder="ex. Man in front of brown gate."></textarea>
+<input type="button" id="add" value="add"/>
+<a href="#templates" data-role="button">All Created Templates</a>
+<div id="here" style="display:none;"></div>
+</div>
+</div>
+
+<div data-role="page" id="templates">
+	<div data-role="header" data-position="relative">
+		<center><img src="images/banner.png"  width="50%"/></center>
+		<a href="index.html" class="ui-btn ui-icon-home ui-btn-icon-left" style="background-color:lightgreen;">Home</a>
+	</div>
+<div data-role="content" data-theme="a">
+<h1>Let's Tryke</h1>
+
+<input type="text" id="name" value="Jp Lastrollo" required/>
+
+<input type="text" id="address" value="#79-20 Street East Bajac-Bajac Olongapo city" required/>
+
+<input type="text" id="number" value="Man with Gordon College Uniform" required/>
+
+<input type="text" id="number" value="+639484686564" required/>
+<label>Gender: MALE</label>
+<a data-role="button" id="save">Home</a>
+
+<input type="text" id="name" value="Jp Lastrollo" required/>
+
+<input type="text" id="address" value="East Tapinac Old Hospital Olongapo city" required/>
+
+<input type="text" id="number" value="Man with Gordon College Uniform" required/>
+
+<input type="text" id="number" value="+639484686564" required/>
+<label>Gender: MALE</label>
+<a data-role="button" id="save">School</a>
+<a data-role="button" href="#create" id="save">Add new template</a>
+</div>
+
+</div>
+</body>
+<script>
+function addlocal(){
+var a=document.getElementById("a").value;
+if(a==""){
+alert("Please fill the required field");
+}else{
+window.localStorage.setItem(a,a);
+   
+}
+}
+
+$("#add").on("click",function(){
+addlocal();
+document.getElementById("a").value="";
+
+
+});
+$(document).ready(function(){
+var a1=window.localStorage.getItem("address");
+var a2=window.localStorage.getItem("number");
+var a3=window.localStorage.getItem("name");
+$("#address").val(a1);
+$("#address1").val(a1);
+$("#number").val(a2);
+$("#number1").val(a2);
+$("#name").val(a3);
+$("#name1").val(a3);
+for ( var i = 0, len = localStorage.length; i < len; ++i ) {
+  console.log( localStorage.getItem( localStorage.key( i ) ) );
+  
+var local=localStorage.getItem( localStorage.key( i ) );
+  $( "#here" ).append( "<center><input type='button' class='myButton' value='"+local+"' /><br /></center>");
+}
+
+
+$(".myButton").click(function(){
+promt("Please Enter anything else to identify you: ","");
+})
+
+});
+
+$("#submit").click(function(){
+alert("Please wait. We will text you the Body number of the Tricycle. \n Please give us feedback if the transaction was successful.");
+});
+
+
+$("#save").click(function(){
+var add=$("#address").val();
+var num=$("#number").val();
+var name=$("#name").val();
+window.localStorage.setItem("address",add);
+window.localStorage.setItem("number",num);
+window.localStorage.setItem("name",name);
+alert("Congrats! You've successfully set your info.");
+location.href="#home";
+});
+
+
+
+$(".save").click(function(){
+
+alert("Your message has been sent. \nPlease wait and we'll text you the body number of the Tricycle to pick you up. \n There will be additional charges for the pick up. minimum service charge of 15php is equal to 10 pesos pick up fee. \n Please give us feedback if the transaction was successful.");
+});
+</script>
+</html>
